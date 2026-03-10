@@ -1,0 +1,951 @@
+/**
+ * Project: Accessible Language Learning Platform
+ * Module: Modern Design System with Gradient Themes
+ * Version: 2.0
+ *
+ * Description:
+ * Beautiful, modern design system with gradient themes, glassmorphism effects,
+ * and enhanced accessibility features for an engaging learning experience.
+ */
+
+/* =========================================
+   GOOGLE FONTS IMPORT
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* =========================================
+     Modern Color Palette with Gradients
+     ========================================= */
+  /* Primary Gradient - Purple to Blue */
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --primary-color: #7c3aed;
+  --primary-light: #a78bfa;
+  --primary-dark: #5b21b6;
+
+  /* Secondary Gradient - Teal to Cyan */
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --secondary-color: #06b6d4;
+  --secondary-light: #67e8f9;
+  --secondary-dark: #0891b2;
+
+  /* Accent Colors */
+  --accent-color: #f59e0b;
+  --accent-pink: #ec4899;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  --accent-orange: #fb923c;
+
+  /* Success, Warning, Error */
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --info-color: #3b82f6;
+
+  /* Neutral Colors - Light Theme */
+  --background-color: #f8fafc;
+  --background-gradient: linear-gradient(180deg, #f8fafc 0%, #e7e5ff 100%);
+  --surface-color: #ffffff;
+  --surface-elevated: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  --backdrop-blur: blur(10px);
+
+  /* =========================================
+     Typography
+     ========================================= */
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-dyslexic: 'Comic Sans MS', 'Chalkboard SE', 'Arial Rounded MT Bold', sans-serif;
+  --base-font-size: 16px;
+  --line-height-base: 1.6;
+  --line-height-heading: 1.2;
+
+  /* Font Weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* Spacing System (Enhanced) */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-xxxl: 64px;
+
+  /* Border Radius (Rounded) */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s;
+  --transition-base: 0.3s;
+  --transition-slow: 0.5s;
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* =========================================
+   THEME OVERRIDES
+   ========================================= */
+
+/* Dark Mode - Elegant dark theme with gradients */
+[data-theme="dark"] {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --primary-color: #a78bfa;
+  --primary-light: #c4b5fd;
+  --primary-dark: #7c3aed;
+
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --secondary-color: #22d3ee;
+  --secondary-light: #67e8f9;
+  --secondary-dark: #06b6d4;
+
+  --accent-color: #fbbf24;
+  --success-color: #34d399;
+  --warning-color: #fbbf24;
+  --error-color: #f87171;
+
+  --background-color: #0f172a;
+  --background-gradient: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%);
+  --surface-color: #1e293b;
+  --surface-elevated: #334155;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-light: #64748b;
+  --border-color: #334155;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.6);
+
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* High Contrast Mode - Accessibility focused */
+[data-theme="high-contrast"] {
+  --primary-color: #FFFF00;
+  --primary-gradient: linear-gradient(135deg, #FFFF00 0%, #FFD700 100%);
+  --secondary-color: #00FF00;
+  --accent-color: #FF0000;
+  --success-color: #00FF00;
+  --warning-color: #FFFF00;
+  --error-color: #FF0000;
+
+  --background-color: #000000;
+  --background-gradient: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
+  --surface-color: #000000;
+  --surface-elevated: #1a1a1a;
+  --text-main: #FFFFFF;
+  --text-muted: #CCCCCC;
+  --text-light: #999999;
+  --border-color: #FFFFFF;
+  --shadow-sm: 0 0 0 2px #FFFFFF;
+  --shadow-md: 0 0 0 3px #FFFFFF;
+  --shadow-lg: 0 0 0 4px #FFFFFF;
+  --shadow-xl: 0 0 0 5px #FFFFFF;
+
+  --glass-bg: rgba(0, 0, 0, 0.9);
+  --glass-border: rgba(255, 255, 255, 1);
+  --glass-shadow: 0 0 0 3px #FFFFFF;
+}
+
+/* =========================================
+   GLOBAL RESET & BASE STYLES
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--base-font-size);
+  line-height: var(--line-height-base);
+  color: var(--text-main);
+  background: var(--background-gradient);
+  background-attachment: fixed;
+  min-height: 100vh;
+  transition: background var(--transition-base), color var(--transition-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-bold);
+  line-height: var(--line-height-heading);
+  color: var(--text-main);
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: var(--font-extrabold);
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-muted);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-fast) var(--ease-smooth);
+}
+
+a:hover {
+  color: var(--primary-light);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Accessibility: Dyslexia Friendly Font Override */
+body.dyslexia-font,
+body.dyslexia-font * {
+  font-family: var(--font-family-dyslexic) !important;
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+  line-height: 1.8;
+}
+
+/* Focus Styles for Accessibility */
+*:focus {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+[data-theme="high-contrast"] *:focus {
+  outline: 4px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   LAYOUT & UTILITY CLASSES
+   ========================================= */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.container-narrow {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* Flexbox Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-sm {
+  gap: var(--spacing-sm);
+}
+
+.gap-md {
+  gap: var(--spacing-md);
+}
+
+.gap-lg {
+  gap: var(--spacing-lg);
+}
+
+/* Grid Utilities */
+.grid {
+  display: grid;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+}
+
+/* =========================================
+   BUTTON STYLES
+   ========================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-heading);
+  font-size: 1rem;
+  font-weight: var(--font-semibold);
+  cursor: pointer;
+  transition: all var(--transition-base) var(--ease-smooth);
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Primary Button - Gradient */
+.btn-primary {
+  background: var(--primary-gradient);
+  color: #ffffff;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background: var(--secondary-gradient);
+  color: #ffffff;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Outline Button */
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Ghost Button */
+.btn-ghost {
+  background-color: var(--surface-color);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.btn-ghost:hover {
+  background-color: var(--surface-elevated);
+  border-color: var(--primary-color);
+}
+
+/* Button Sizes */
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 1.125rem;
+}
+
+/* High Contrast Overrides */
+[data-theme="high-contrast"] .btn-primary {
+  background: var(--primary-color);
+  color: #000;
+  border: 3px solid #fff;
+}
+
+[data-theme="high-contrast"] .btn-outline {
+  border-width: 3px;
+}
+
+/* =========================================
+   CARD COMPONENTS
+   ========================================= */
+.card {
+  background-color: var(--surface-color);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-base) var(--ease-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Glass Card */
+.card-glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Gradient Card */
+.card-gradient {
+  background: var(--primary-gradient);
+  color: #ffffff;
+  border: none;
+}
+
+.card-gradient * {
+  color: #ffffff;
+}
+
+/* Elevated Card */
+.card-elevated {
+  background-color: var(--surface-elevated);
+  box-shadow: var(--shadow-xl);
+}
+
+/* High Contrast Card */
+[data-theme="high-contrast"] .card {
+  border: 3px solid var(--border-color);
+  box-shadow: none;
+}
+
+[data-theme="high-contrast"] .card:hover {
+  border-width: 4px;
+  transform: none;
+}
+
+/* =========================================
+   ACCESSIBILITY TOOLBAR
+   ========================================= */
+.a11y-toolbar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+  display: flex;
+  gap: var(--spacing-sm);
+  z-index: 1000;
+  border: 1px solid var(--glass-border);
+  animation: slideInRight 0.5s ease-out;
+}
+
+.a11y-btn {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: var(--font-medium);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  transition: all var(--transition-fast) var(--ease-smooth);
+  white-space: nowrap;
+}
+
+.a11y-btn:hover,
+.a11y-btn:focus {
+  background: var(--primary-gradient);
+  color: #ffffff;
+  border-color: transparent;
+  transform: scale(1.05);
+}
+
+[data-theme="high-contrast"] .a11y-toolbar {
+  background: var(--surface-color);
+  border: 3px solid var(--border-color);
+  backdrop-filter: none;
+}
+
+/* =========================================
+   TOAST NOTIFICATIONS
+   ========================================= */
+.toast {
+  visibility: hidden;
+  min-width: 300px;
+  max-width: 500px;
+  background: var(--surface-elevated);
+  color: var(--text-main);
+  text-align: center;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  position: fixed;
+  z-index: 2000;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  font-weight: var(--font-medium);
+  box-shadow: var(--shadow-xl);
+  border: 2px solid var(--primary-color);
+  opacity: 0;
+  transition: opacity var(--transition-base), bottom var(--transition-base), visibility 0s linear var(--transition-base);
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
+  transition: opacity var(--transition-base), bottom var(--transition-base), visibility 0s;
+}
+
+[data-theme="high-contrast"] .toast {
+  border: 4px solid var(--border-color);
+}
+
+/* =========================================
+   PROGRESS BARS
+   ========================================= */
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background-color: var(--border-color);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--primary-gradient);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow) var(--ease-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent);
+  animation: shimmer 2s infinite;
+}
+
+/* Circular Progress */
+.circular-progress {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary-color) var(--progress, 0%),
+      var(--border-color) 0%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.circular-progress::before {
+  content: '';
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: var(--surface-color);
+}
+
+.circular-progress-text {
+  position: relative;
+  z-index: 1;
+  font-size: 1.5rem;
+  font-weight: var(--font-bold);
+  color: var(--primary-color);
+}
+
+/* =========================================
+   BADGES & LABELS
+   ========================================= */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: var(--font-semibold);
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.badge-success {
+  background-color: var(--success-color);
+}
+
+.badge-warning {
+  background-color: var(--warning-color);
+}
+
+.badge-error {
+  background-color: var(--error-color);
+}
+
+.badge-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* =========================================
+   STATS WIDGETS
+   ========================================= */
+.stat-card {
+  background: var(--surface-color);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: var(--font-extrabold);
+  color: var(--primary-color);
+  line-height: 1;
+  margin-bottom: var(--spacing-sm);
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: var(--font-semibold);
+}
+
+.stat-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+/* =========================================
+   RESPONSIVE DESIGN (ENHANCED)
+   ========================================= */
+@media (max-width: 1024px) {
+  :root {
+    --base-font-size: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --base-font-size: 14px;
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .a11y-toolbar {
+    top: auto;
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: var(--spacing-sm);
+  }
+
+  .a11y-btn {
+    flex: 1;
+    min-width: 60px;
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+  }
+
+  .card {
+    padding: var(--spacing-lg);
+  }
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .toast {
+    min-width: 250px;
+    max-width: 90%;
+  }
+
+  /* Quiz Specifics */
+  .option-btn {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-bottom: 100px;
+    /* Prevent content from being hidden behind fixed toolbar */
+  }
+
+  :root {
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+  }
+
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .btn-lg {
+    padding: 12px 24px;
+    font-size: 1rem;
+    width: 100%;
+    /* Full width buttons on mobile */
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Quiz layout adjustments */
+  main.container {
+    margin-top: 20px !important;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  /* Header adjustments */
+  header .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* =========================================
+   CUSTOM CURSOR STYLES
+   ========================================= */
+
+/* Custom cursor for the entire body */
+body {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23667eea;stop-opacity:1" /><stop offset="100%" style="stop-color:%23764ba2;stop-opacity:1" /></linearGradient></defs><path d="M3 3 L10 20 L13 13 L20 10 Z" fill="url(%23grad)" stroke="white" stroke-width="1.5"/></svg>'), auto;
+}
+
+/* Pointer cursor for interactive elements with special styling */
+a,
+button,
+.btn,
+.card[onclick],
+[role="button"],
+input[type="button"],
+input[type="submit"],
+select {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23f093fb;stop-opacity:1" /><stop offset="100%" style="stop-color:%23f5576c;stop-opacity:1" /></linearGradient></defs><circle cx="14" cy="14" r="10" fill="url(%23grad2)" opacity="0.3"/><path d="M4 4 L12 22 L15 15 L22 12 Z" fill="url(%23grad2)" stroke="white" stroke-width="2"/></svg>'), pointer;
+}
+
+/* Text cursor for input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 20 24"><line x1="10" y1="2" x2="10" y2="22" stroke="%23667eea" stroke-width="2"/><line x1="6" y1="2" x2="14" y2="2" stroke="%23667eea" stroke-width="2"/><line x1="6" y1="22" x2="14" y2="22" stroke="%23667eea" stroke-width="2"/></svg>'), text;
+}
+
+/* Grab cursor for draggable elements */
+[draggable="true"] {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2 L12 22 M2 12 L22 12" stroke="%2310b981" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="8" stroke="%2310b981" stroke-width="2" fill="none" opacity="0.3"/></svg>'), grab;
+}
+
+/* High contrast mode - simpler cursors */
+[data-theme="high-contrast"] body,
+[data-theme="high-contrast"] a,
+[data-theme="high-contrast"] button,
+[data-theme="high-contrast"] .btn {
+  cursor: default;
+}
+
+[data-theme="high-contrast"] a:hover,
+[data-theme="high-contrast"] button:hover,
+[data-theme="high-contrast"] .btn:hover {
+  cursor: pointer;
+}
+
+/* =========================================
+   MISSING CUSTOM PROPERTY ALIASES
+   (Used throughout JSX inline styles)
+   ========================================= */
+:root {
+  --text-dark: var(--text-main);
+  --surface-hover: var(--surface-elevated);
+  --primary-cyan: #00e5ff;
+  --primary-purple: #8b5cf6;
+  --primary-green: #22c55e;
+  --primary-orange: #fb923c;
+  --primary-blue: #3b82f6;
+  --font-heading: 'Poppins', sans-serif;
+}
+
+[data-theme="dark"] {
+  --text-dark: #f1f5f9;
+  --surface-hover: #1e293b;
+}
+
+[data-theme="high-contrast"] {
+  --text-dark: #ffffff;
+}
+
+/* =========================================
+   LANDING PAGE HERO — Force readable dark bg
+   The hero has aurora/gradient bg so text
+   must always be white regardless of theme.
+   ========================================= */
+.landing-hero {
+  background: #05050a;
+  color: #ffffff;
+}
+
+/* Ensure heading/text in landing hero is visible in all themes */
+.landing-hero h1,
+.landing-hero h2,
+.landing-hero h3,
+.landing-hero p,
+.landing-hero span:not([style]) {
+  color: inherit;
+}

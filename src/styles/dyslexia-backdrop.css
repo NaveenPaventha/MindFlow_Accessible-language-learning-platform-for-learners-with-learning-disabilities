@@ -1,0 +1,135 @@
+/* =========================================
+   ANIMATED BACKGROUND ELEMENTS
+   ========================================= */
+
+/* Floating Blobs */
+.blob {
+    position: fixed;
+    z-index: 0;
+    /* Behind content but accessible if needed, content should be z-index 1 */
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.6;
+    animation: blobFloat 25s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--gradient-candy, linear-gradient(135deg, #EC4899 0%, #F472B6 50%, #FBCFE8 100%));
+    top: -100px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 350px;
+    height: 350px;
+    background: var(--gradient-ocean, linear-gradient(135deg, #0EA5E9 0%, #06B6D4 50%, #22D3EE 100%));
+    top: 50%;
+    right: -100px;
+    animation-delay: -5s;
+}
+
+.blob-3 {
+    width: 300px;
+    height: 300px;
+    background: var(--gradient-galaxy, linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #A78BFA 100%));
+    bottom: -50px;
+    left: 30%;
+    animation-delay: -10s;
+}
+
+@keyframes blobFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(30px, -50px) scale(1.1) rotate(90deg);
+    }
+
+    50% {
+        transform: translate(-20px, 30px) scale(0.95) rotate(180deg);
+    }
+
+    75% {
+        transform: translate(40px, 20px) scale(1.05) rotate(270deg);
+    }
+}
+
+/* Animated Clouds */
+.cloud {
+    position: fixed;
+    z-index: 0;
+    opacity: 0.7;
+    animation: cloudDrift 60s linear infinite;
+    pointer-events: none;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud-shape {
+    width: 100px;
+    height: 40px;
+    background: white;
+    border-radius: 100px;
+    position: relative;
+    box-shadow: inset -10px -10px 30px rgba(0, 0, 0, 0.05), 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.cloud-shape::after {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 15px;
+}
+
+.cloud-shape::before {
+    width: 40px;
+    height: 40px;
+    top: -15px;
+    left: 45px;
+}
+
+@keyframes cloudDrift {
+    0% {
+        transform: translateX(-200px);
+    }
+
+    100% {
+        transform: translateX(calc(100vw + 200px));
+    }
+}
+
+/* Decorative Icons */
+.deco-icon {
+    position: fixed;
+    font-size: 2.5rem;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 0;
+    animation: decoFloat 8s ease-in-out infinite;
+    color: var(--text-dark, #0F172A);
+}
+
+@keyframes decoFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}

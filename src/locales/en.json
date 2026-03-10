@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "courses": "Course Library",
+    "practiceLab": "Practice Lab",
+    "community": "Community",
+    "settings": "Settings",
+    "dyslexiaCenter": "Dyslexia Center",
+    "speechPractice": "Speech Practice",
+    "teacherHub": "Teacher Hub",
+    "forum": "Discussion Forum",
+    "profile": "Profile",
+    "logout": "Log Out",
+    "adminHub": "Admin Command Center",
+    "guardianHub": "Guardian Hub"
+  },
+  "landing": {
+    "welcome": "Welcome Back!",
+    "login": "Let's Go! 🚀",
+    "adventure": "Your Learning Adventure Starts Here!",
+    "register": "New here? Join the Fun!"
+  },
+  "dashboard": {
+    "hello": "Hello",
+    "resume": "Resume Learning",
+    "recommended": "RECOMMENDED",
+    "startCourse": "Start Course",
+    "continueCourse": "Continue",
+    "locked": "Locked",
+    "comingSoon": "COMING SOON",
+    "dayStreak": "Day Streak",
+    "totalXP": "Total XP",
+    "badgesEarned": "Badges Earned"
+  }
+}

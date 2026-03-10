@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "dashboard": "डैशबोर्ड",
+    "courses": "पाठ्यक्रम",
+    "practiceLab": "अभ्यास लैब",
+    "community": "समुदाय",
+    "settings": "सेटिंग्स",
+    "dyslexiaCenter": "डिस्लेक्सिया केंद्र",
+    "speechPractice": "भाषण अभ्यास",
+    "teacherHub": "शिक्षक हब",
+    "forum": "चर्चा मंच",
+    "profile": "प्रोफ़ाइल",
+    "logout": "लॉग आउट",
+    "adminHub": "एडमिन हब",
+    "guardianHub": "गार्जियन हब"
+  },
+  "landing": {
+    "welcome": "नमस्ते!",
+    "login": "लॉगिन",
+    "adventure": "आपकी सीखने की यात्रा यहाँ से शुरू होती है!",
+    "register": "रजिस्टर करें",
+    "mission": "हमारा लक्ष्य",
+    "problem": "समस्या",
+    "solution": "समाधान",
+    "team": "हमारी टीम",
+    "novelties": "विशेषताएं",
+    "future": "भविष्य के सुधार"
+  },
+  "dashboard": {
+    "hello": "नमस्ते",
+    "resume": "सीखना जारी रखें",
+    "recommended": "आपके लिए अनुशंसित",
+    "startCourse": "शुरू करें",
+    "continueCourse": "जारी रखें",
+    "locked": "लॉक किया गया",
+    "comingSoon": "जल्द आ रहा है",
+    "dayStreak": "दिनों की स्ट्रीक",
+    "totalXP": "कुल एक्सपी (XP)",
+    "badgesEarned": "अर्जित बैज",
+    "stats": "आँकड़े",
+    "performance": "प्रदर्शन"
+  }
+}
